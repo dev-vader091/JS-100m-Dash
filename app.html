@@ -63,10 +63,45 @@
     </nav>
   </header>
 
-  <main class="content container">
-    <h1>APP UI GOES HERE</h1>
-    <input type="text" id="message" placeholder="Enter a Message...">
-    <button class="btn btn-primary" id="btnSubmit" type="button">Display a Message</button>
+  <main class="content container px-4 py-5 mt-5">
+    <div class="row row-cols-1 row-cols-md-2 gy-2 h-100">
+      <div class="col border-2 border-end">
+        <h1 class="fw-bold mb-3">100m Dash: A Coding Challenge</h1>
+        <h4 class="lead">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi assumenda, nobis vel sequi impedit fuga labore
+          nisi quasi nesciunt accusantium ullam ad voluptatem dignissimos corporis?
+        </h4>
+        <h2 class="mt-5 border-2 border-bottom">Instructions</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dolor aut, incidunt pariatur voluptate omnis cum.
+          Nam voluptates eligendi obcaecati temporibus harum, accusamus cupiditate officiis.
+        </p>
+      </div>
+      <div class="col">
+        <form action="#" class="row gy-2 gx-3">
+          <div class="col">
+            <input type="number" id="startValue" class="form-control" placeholder="Starting Value"
+              aria-label="Starting Value" value="0">
+          </div>
+          <div class="col">
+            <input type="number" id="endValue" class="form-control" placeholder="Ending Value" aria-label="Ending Value"
+              value="100">
+          </div>
+          <div class="col-12 d-flex justify-content-end">
+            <button id="btnSubmit" class="btn btn-dark btn-lg" type="button">Start Race</button>
+          </div>
+        </form>
+        <h2 class="mt-5 border-bottom border-2">Results</h2>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <tbody id="results">
+              <!-- 100m Dash goes here
+                  <tr><td>1</td></tr>...
+              -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </main>
 
 
@@ -104,7 +139,7 @@
   <!-- Custom JS -->
   <script src="/js/site.js"></script>
   <script>
-    document.getElementById('btnSubmit').addEventListener('click', displayMessage);
+    document.getElementById('btnSubmit').addEventListener('click', getValues);
   </script>
 </body>
 
