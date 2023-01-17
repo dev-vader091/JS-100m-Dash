@@ -84,4 +84,12 @@ footer {
   padding-left: 0.5rem;
 }
 
+.even {
+  font-weight: bolder;
+}
+
+
+.odd {
+color: red !important;
+}
 /* END: Main Content Styles */

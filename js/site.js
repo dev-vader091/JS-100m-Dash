@@ -55,10 +55,26 @@ function displayNumbers(arrayOfNumbers) {
 
   for(i = 0; i < arrayOfNumbers.length; i++) {
     let value = arrayOfNumbers[i];
+    let className = value % 2 == 0 ? 'even' : 'odd';
 
-    let tableRow = `<tr><td>${value}</td></tr>`;
+    // if(value % 2 == 0) {
+    //   className = 'even';
+    // }else {
+    //   className = 'odd';
+    // }
+
+    if(i % 5 == 0) {
+      tableHtml += "<tr>";
+    }
+
+
+    let tableRow = `<td class=${className}>${value}</td>`;
 
     tableHtml += tableRow;
+
+    if((i + 1) % 5 == 0) {
+      tableHtml += "</tr>";
+    }
   }
 
   tableBody.innerHTML = tableHtml;

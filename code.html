@@ -73,8 +73,40 @@
       <div class="col-12 col-lg-8">
         <pre class="line-numbers">
           <code class="language-js">
-            function displayMessage() {
-              let msg = document.getElementById('message').value;
+            function getValues() {
+
+              // get values from the page
+                let startValue = document.getElementById('startValue').value;
+                let endValue = document.getElementById('endValue').value;
+            
+              // parse our inputs as numbers 
+              startValue = parseInt(startValue);
+              endValue = parseInt(endValue);
+            
+              // verify our inputs are numbers 
+            
+              if(Number.isInteger(startValue) && Number.isInteger(endValue)) {
+            
+                // if they are, generate numbers
+            
+                let numbersArray = generateNumbers(startValue, endValue);
+            
+                // then display them on the page
+            
+                displayNumbers(numbersArray);
+            
+              } else {
+                // if not, tell our user
+                Swal.fire(
+                  {
+                    icon: 'error',
+                    title: 'Oops',
+                    text: 'Only integers are allowed for 100m Dash!'
+                  }
+                );
+              }
+            
+            }
             
               Swal.fire(
                 {
@@ -86,10 +118,66 @@
             }
           </code>
         </pre>
+        <pre class="line-numbers">
+          <code class="language-js">
+            function generateNumbers(start, end) {
+
+              let numbers = [];
+            
+              for(let i = start; i <= end; i++) {
+                numbers.push(i);
+              }
+            
+              return numbers;
+            }
+          </code>
+        </pre>
+        <pre class="line-numbers">
+          <code class="language-js">
+                      function displayNumbers(arrayOfNumbers) {
+            let tableBody = document.getElementById('results');
+          
+            let tableHtml = "";
+          
+            for(i = 0; i < arrayOfNumbers.length; i++) {
+              let value = arrayOfNumbers[i];
+              let className = value % 2 == 0 ? 'even' : 'odd';
+          
+              // if(value % 2 == 0) {
+              //   className = 'even';
+              // }else {
+              //   className = 'odd';
+              // }
+          
+              if(i % 5 == 0) {
+                tableHtml += "&lt;tr&gt;";
+              }
+          
+          
+              let tableRow = `&lt;td class=${className}>${value}/td&gt;`;
+          
+              tableHtml += tableRow;
+          
+              if((i + 1) % 5 == 0) {
+                tableHtml += "&lt;/tr&gt;";
+              }
+            }
+          
+            tableBody.innerHTML = tableHtml;
+          
+          }
+          </code>
+        </pre>
       </div>
       <div class="col-12 col-lg-4">
         <p>The code is structured in one function.</p>
-        <h5><code>displayMessage()</code></h5>
+        <h5 class="display-5 pb-3"><code>getValues()</code></h5>
+        <p class="mb-5">This function displays the message in a Sweet Alert.</p>
+        <p>The code is structured in one function.</p>
+        <h5 class="display-5 pb-3"><code>generateNumbers()</code></h5>
+        <p class="mb-5">This function displays the message in a Sweet Alert.</p>
+        <p>The code is structured in one function.</p>
+        <h5 class="display-5 pb-3"><code>displayNumbers()</code></h5>
         <p>This function displays the message in a Sweet Alert.</p>
       </div>
     </div>
