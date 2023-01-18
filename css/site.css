@@ -1,6 +1,6 @@
 :root {
   --zd-primary-clr: #001e43;
-  --zd-secondary-clr: #ff993b;
+  --zd-secondary-clr: #ff1616;
   --zd-dark-clr: #1b1b1b;
   --zd-light-clr: #dfe3e4;
 
@@ -48,7 +48,7 @@ footer {
 
 /* START: Footer styles */
 footer {
-  background-color: var(--zd-primary-clr);
+  /* background-color: var(--zd-primary-clr); */
   color: var(--zd-light-clr);
 }
 
@@ -59,7 +59,7 @@ footer {
 }
 
 .socialicons:hover {
-  color: var(--zd-secondary-clr);
+  color: #ff1616;
 }
 
 /* END: Footer styles */
@@ -91,5 +91,27 @@ footer {
 
 .odd {
 color: red !important;
+}
+
+.try-btn {
+  border: 1px solid #ff1616;
+  color: #ff1616;
+}
+
+.try-btn:hover {
+  background-color: #ff1616;
+  color: #fff;
+}
+
+#btnSubmit {
+  background-color: #ff1616;
+  color: #fff;
+  transition: all 0.1s ease-in;
+}
+
+#btnSubmit:hover {
+  background: none;
+  border: 1px solid #ff1616;
+  color: #ff1616;
 }
 /* END: Main Content Styles */
