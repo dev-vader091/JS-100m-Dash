@@ -170,15 +170,23 @@
         </pre>
       </div>
       <div class="col-12 col-lg-4">
-        <p>The code is structured in one function.</p>
+        <p>The code is the controller function.</p>
         <h5 class="display-5 pb-3"><code>getValues()</code></h5>
-        <p class="mb-5">This function displays the message in a Sweet Alert.</p>
-        <p>The code is structured in one function.</p>
+        <p class="mb-5">This function retrieves start and end values from the user input. These values are then parsed into numbers and then verifies with Number.isInteger() with an if() statement.
+          If validation is successful, the two numbers are used as parameters for generateNumbers(). If not, a Sweet Alert is generated to request integers only in the case non-integer values were provided by the user.
+
+        </p>
+        <p>The code is the logic function.</p>
         <h5 class="display-5 pb-3"><code>generateNumbers()</code></h5>
-        <p class="mb-5">This function displays the message in a Sweet Alert.</p>
-        <p>The code is structured in one function.</p>
+        <p class="mb-5">This function generates an array of numbers, with the first value in the array being the start value and the last the end value inputs from the user.
+          The array generated in this function is then used as the parameter in displayNumbers().
+        </p>
+        <p>The code is the view function.</p>
         <h5 class="display-5 pb-3"><code>displayNumbers()</code></h5>
-        <p>This function displays the message in a Sweet Alert.</p>
+        <p>In this function the array from generateNumbers() is used as the condition statement in a for loop. In this loop, if the index i % 5 is 0, a &lt;tr&gt; tag is added to the tableHtml element initialized. A tableRow variable with the &lt;td&gt; current i in the loop is then added to the tableHtml variable to be displayed on the page.
+          After the loop has ended, the tableBody element from the document is assigned the tableHtml for innerHTML content, displaying the completed table to the user on the page.
+
+        </p>
       </div>
     </div>
   </main>
